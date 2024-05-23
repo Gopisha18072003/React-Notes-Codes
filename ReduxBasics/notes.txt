@@ -1,0 +1,11 @@
+Question 1 - What is redux?
+ans - A state management system for cross-component or app-wide state
+
+Question 2 - React vs Redux?
+ans - 1. In more complex apps, using React Context can lead to  deeply nested
+      or "fat" "Context Provider" components
+      2. React Context is not optimized for high-frequency state changes
+
+In Redux component does not change the state it will subscribe to the central
+data(state) store and if any change in state occurs all components get notified 
+by the Central data(state) store, State manipulation is done by reducer function, 
