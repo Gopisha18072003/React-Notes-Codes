@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import classes from './Counter.module.css';
 import {useSelector, useDispatch, connect}  from 'react-redux';
+import { counterActions } from '../store/counter-slice';
 
 // FUNCTIONAL COMPONENT
 
@@ -9,7 +10,9 @@ import {useSelector, useDispatch, connect}  from 'react-redux';
 //   // whren using useSelector react-redux automatically creates a subscription of this component 
 //   // function to the store
 //   const counter = useSelector(state => state.counter);
-//   const toggleCounterHandler = () => {};
+//   const toggleCounterHandler = () => {
+//      dispatch({type: 'toogleCounter'})
+//  };
 
 //   const incrementHandler = () => {
 //     dispatch({type: 'increment'});
@@ -19,12 +22,17 @@ import {useSelector, useDispatch, connect}  from 'react-redux';
 //     dispatch({type: 'decrement'})
 //   }
 
+// const increaseHandler = () => {
+//   dispatch({type: 'increase', amount: 5})
+// }
+
 //   return (
 //     <main className={classes.counter}>
 //       <h1>Redux Counter</h1>
 //       <div className={classes.value}>{counter}</div>
 //       <div>
 //         <button onClick={incrementHandler}>Increment</button>
+//         <button onClick={increaseHandler}>Increase by 5</button>
 //         <button onClick={decrementHandler}>Decrement</button>
 //       </div>
 //       <button onClick={toggleCounterHandler}>Toggle Counter</button>
@@ -73,17 +81,17 @@ class Counter extends Component {
 
 const mapStateToProps = state => {
   return {
-    counter: state.counter,
-    showCounter: state.showCounter
+    counter: state.counter.counter,
+    showCounter: state.counter.showCounter
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    increment: () => dispatch({type: 'increment'}),
-    decrement: () => dispatch({type: 'decrement'}),
-    increase: () => dispatch({type: 'increase', amount: 5}),
-    toggleCounter: () => dispatch({type: 'toggleCounter'})
+    increment: () => dispatch(counterActions.increment()),
+    decrement: () => dispatch(counterActions.decrement()),
+    increase: () => dispatch(counterActions.increase(5)), // ----- any kind of value can be passed 
+    toggleCounter: () => dispatch(counterActions.toogleCounter())
   }
 }
 
