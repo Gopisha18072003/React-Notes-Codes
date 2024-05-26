@@ -1,0 +1,5 @@
+1.Redux and Side Effect  -
+Reducers must be pure(in same situation it always produce same result), side-effect free, synchronous functions.
+
+ 
+ 
