@@ -1,0 +1,11 @@
+1.Redux and Side Effect  -
+Reducers must be pure(in same situation it always produce same result), side-effect free, synchronous functions.
+
+ 
+where should side-effects & async task be executed?
+1. Inside the components
+2. Inside the action creators
+
+What is a Thunk?
+A function that delays an action untill later.
+An action creator function that does not return the action itself but insted  another function which eventually return the action.

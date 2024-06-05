@@ -40,7 +40,8 @@
 }
 
 body {
-  margin: 0;
+  margin: 20px ;
+  text-align: center;
 }
 
 ul {
@@ -48,3 +49,5 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+
