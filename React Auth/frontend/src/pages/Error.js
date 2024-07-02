@@ -22,7 +22,8 @@ function ErrorPage() {
     <>
       <MainNavigation />
       <PageContent title={title}>
-        <p>{message}</p>
+        <p>{message} </p>
+        {console.log(error)}
       </PageContent>
     </>
   );
